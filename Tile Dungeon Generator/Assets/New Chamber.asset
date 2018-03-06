@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 289b8a206d74556428ad8cb04f8a4053, type: 3}
+  m_Name: New Chamber
+  m_EditorClassIdentifier: 
+  name: "Ma\u0142y"
+  painter:
+    tile: {fileID: 11400000, guid: 4d49e6ebcdbd90f4ea942d957ea70fc4, type: 2}
+  amount:
+    m_Min: 3
+    m_Max: 5
+  width:
+    m_Min: 3
+    m_Max: 10
+  height:
+    m_Min: 3
+    m_Max: 10
