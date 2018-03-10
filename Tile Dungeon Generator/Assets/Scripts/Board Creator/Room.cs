@@ -17,37 +17,34 @@ public class Room
         int width = roomPattern.GetRoomWidth(vector.direction);
         int height = roomPattern.GetRoomHeight(vector.direction);
         startPosition = GetPositionWithLowestCoordinates(vector, width, height);
-        endPosition = GetPositionWithHighestCoordinates(vector, width, height);
+        endPosition = GetPositionWithHighestCoordinates(width, height);
         unusedDirections = roomPattern.GetDirectionsContainer(vector.direction);
     }
 
     public TileVector GetVectorForNewRoomAndRemoveDirection(RoomType typeOfNewRoom)
     {
         Direction directionOfnewRoom = unusedDirections.GetAndRemoveRandomDirection();
-        return roomPattern.GetVectorForNewRoom(directionOfnewRoom, this, typeOfNewRoom);
+        return roomPattern.GetVectorForStartingNewRoom(directionOfnewRoom, this, typeOfNewRoom);
     }
 
     public void Draw(Tilemap tilemap) { roomPattern.Draw(this, tilemap); }
 
     Vector2Int GetPositionWithLowestCoordinates(TileVector vector, int width, int height)
     {
+        Vector2Int positionModyfication;
         if (vector.direction.IsNorth)
-            return new Vector2Int(GetRandomCoordinateInRange(vector.position.x, width), vector.position.y);
+            positionModyfication = new Vector2Int(Random.Range(-width, 1), 0);
         else if (vector.direction.IsSouth)
-            return new Vector2Int(GetRandomCoordinateInRange(vector.position.x, width), vector.position.y - height);
+            positionModyfication = new Vector2Int(Random.Range(-width, 1), -height);
         else if (vector.direction.IsEast)
-            return new Vector2Int(vector.position.x, GetRandomCoordinateInRange(vector.position.y, height));
+            positionModyfication = new Vector2Int(0, Random.Range(-height, 1));
         else
-            return new Vector2Int(vector.position.x - width, GetRandomCoordinateInRange(vector.position.y, height));
+            positionModyfication = new Vector2Int(-width, Random.Range(-height, 1));
+        return vector.position + positionModyfication;
     }
 
-    int GetRandomCoordinateInRange(int startCoordinate, int range)
+    Vector2Int GetPositionWithHighestCoordinates(int width, int height)
     {
-        return Random.Range(startCoordinate - range, startCoordinate + 1);
-    }
-
-    Vector2Int GetPositionWithHighestCoordinates(TileVector vector, int width, int height)
-    {
-        return new Vector2Int(startPosition.x + width, startPosition.y + height);
+        return startPosition + new Vector2Int(width, height);
     }
 }

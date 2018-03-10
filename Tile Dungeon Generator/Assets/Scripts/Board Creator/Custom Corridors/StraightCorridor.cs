@@ -25,7 +25,7 @@ public class StraightCorridor : RoomPattern
         return direction.IsEast || direction.IsWest ? lenght.Random : 0;
     }
 
-    public override TileVector GetVectorForNewRoom(Direction direcionOfNewRoom, Room corridor, RoomType typeOfNewRoom)
+    public override TileVector GetVectorForStartingNewRoom(Direction direcionOfNewRoom, Room corridor, RoomType typeOfNewRoom)
     {
         if (typeOfNewRoom == RoomType.Corridor)
             direcionOfNewRoom.ChangeToRandomPerpendicularDirection();

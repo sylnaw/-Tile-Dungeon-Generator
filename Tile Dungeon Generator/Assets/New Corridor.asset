@@ -11,12 +11,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 473fbcb96597ea24a8a88a1bf62c0c49, type: 3}
   m_Name: New Corridor
   m_EditorClassIdentifier: 
-  name: nfvd
+  name: 
   painter:
-    tile: {fileID: 11400000, guid: 4bd40fd14204d22469144836eefc34a1, type: 2}
+    tile: {fileID: 11400000, guid: 7a7165d1f38e86743b43ac1f798872ed, type: 2}
   amount:
     m_Min: 10
     m_Max: 15
   lenght:
-    m_Min: 3
-    m_Max: 10
+    m_Min: 15
+    m_Max: 20

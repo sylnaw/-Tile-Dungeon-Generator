@@ -20,19 +20,34 @@ public class BoardCreator : MonoBehaviour
 
     void Start()
     {
-        if (roomPatterns.Count() > 0 && board != null)
+        if (CheckIfRoomPatternsArentEmpty() && board != null)
         {
             CreateCreators(roomPatterns, creators);
             CreateRooms();
             DrawRooms();
         }
         else
-        {
-            if (roomPatterns.Count() <= 0) Debug.LogWarning("There are no Room Patterns attached to the Board Creator.");
-            if (board == null) Debug.LogWarning("There are no Tilemap attached to the Board Creator.");
-        }
+            if (board == null) Debug.LogWarning("There is no tilemap attached to the Board Creator.");
     }
 
+    bool CheckIfRoomPatternsArentEmpty()
+    {
+        if (roomPatterns.Count() <= 0)
+        {
+            Debug.LogWarning("There are no room patterns attached to the Board Creator.");
+            return true;
+        }
+        else
+        {
+            foreach (RoomPattern pattern in roomPatterns)
+                if (pattern == null)
+                {
+                    Debug.LogWarning("One of room patterns attached to the Board Creator is empty.");
+                    return false;
+                }
+        }
+        return true;
+    }
     void CreateCreators(RoomPattern[] roomPatterns, List<Creator> creators)
     {
         foreach (RoomPattern roomPattern in roomPatterns)
@@ -119,7 +134,7 @@ public class BoardCreator : MonoBehaviour
         {
             this.roomPattern = roomPattern;
             AmountOfRooms = roomPattern.amount.Random;
-            if (!roomPattern.PainterHaveTile) Debug.LogWarning("There are no Tile attached to the " + roomPattern.name + ".");
+            if (!roomPattern.PainterHaveTile) Debug.LogWarning("There is no tile attached to the " + roomPattern.name + ".");
         }
 
         public Room GetRoom(TileVector vector)

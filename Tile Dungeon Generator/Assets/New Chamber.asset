@@ -11,15 +11,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 289b8a206d74556428ad8cb04f8a4053, type: 3}
   m_Name: New Chamber
   m_EditorClassIdentifier: 
-  name: "Ma\u0142y"
+  name: 
   painter:
-    tile: {fileID: 11400000, guid: 4d49e6ebcdbd90f4ea942d957ea70fc4, type: 2}
+    tile: {fileID: 11400000, guid: 1c565568c4ce39a44a051f7072131ea3, type: 2}
   amount:
-    m_Min: 3
-    m_Max: 5
+    m_Min: 5
+    m_Max: 10
   width:
     m_Min: 3
-    m_Max: 10
+    m_Max: 5
   height:
     m_Min: 3
-    m_Max: 10
+    m_Max: 5

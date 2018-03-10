@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 
-//TODO: Change name.
 public enum AvalibleDirection
 {
     North, East, South, West
