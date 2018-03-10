@@ -152,29 +152,14 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114175882333569794, guid: 5038ab7dbc41d71429bc64a2184ab457,
+        type: 2}
+      propertyPath: board
+      value: 
+      objectReference: {fileID: 2057543927}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5038ab7dbc41d71429bc64a2184ab457, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &55077545 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1110385102384160, guid: 5038ab7dbc41d71429bc64a2184ab457,
-    type: 2}
-  m_PrefabInternal: {fileID: 55077544}
---- !u!114 &55077548
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 55077545}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2048a032b174d5048a0fe4b6d421335a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  board: {fileID: 0}
-  roomPatterns:
-  - {fileID: 11400000, guid: f7db45321f504aa43accc15be96dc558, type: 2}
-  - {fileID: 11400000, guid: a83b0d3213ba62b45a533efb88d11335, type: 2}
 --- !u!1 &1177819381
 GameObject:
   m_ObjectHideFlags: 0
@@ -506,7 +491,7 @@ Grid:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2098369236}
   m_Enabled: 1
-  m_CellSize: {x: 0.16, y: 0.16, z: 0}
+  m_CellSize: {x: 1, y: 1, z: 0}
   m_CellGap: {x: 0, y: 0, z: 0}
   m_CellLayout: 0
   m_CellSwizzle: 0
