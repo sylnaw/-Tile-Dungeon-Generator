@@ -171,7 +171,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2048a032b174d5048a0fe4b6d421335a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  board: {fileID: 2057543927}
+  board: {fileID: 0}
   roomPatterns:
   - {fileID: 11400000, guid: f7db45321f504aa43accc15be96dc558, type: 2}
   - {fileID: 11400000, guid: a83b0d3213ba62b45a533efb88d11335, type: 2}
